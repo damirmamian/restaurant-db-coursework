@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory & Sage | Панель Шеф-кухаря</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" type="image/png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="chef-mode">
+    <header>
+        <div class="container navbar">
+            <a href="./index.html" class="logo">
+                <i class="fas fa-fire"></i> Кухня Шефа
+            </a>
+            <nav>
+                <ul class="chef-nav-links">
+                    <li><a class="chef-nav-link active" onclick="switchView('orders')">Замовлення</a></li>
+                    <li><a class="chef-nav-link" onclick="switchView('bookings')">Бронювання</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <span id="chef-name" style="font-weight: bold; color: var(--color-gold);">Шеф</span>
+                <button onclick="logout()" class="btn-login"
+                    style="background-color: #d9534f; border-color: #d9534f; color: white;">Вийти</button>
+            </div>
+        </div>
+    </header>
+    <main class="container main-padded">
+        <div id="view-orders">
+            <div class="chef-controls">
+                <h2 class="page-title-cart">Кухонний екран</h2>
+                <button class="btn" onclick="fetchOrders()"><i class="fas fa-sync"></i> Оновити</button>
+            </div>
+            <div class="kds-grid">
+                <div class="kds-column col-pending">
+                    <div class="kds-header">
+                        <h3><i class="fas fa-clock"></i> Очікують</h3>
+                        <span class="badge" id="count-pending">0</span>
+                    </div>
+                    <div id="list-pending" class="order-list"></div>
+                </div>
+                <div class="kds-column col-cooking">
+                    <div class="kds-header">
+                        <h3><i class="fas fa-fire-alt"></i> Готуються</h3>
+                        <span class="badge" id="count-cooking">0</span>
+                    </div>
+                    <div id="list-cooking" class="order-list"></div>
+                </div>
+                <div class="kds-column col-ready">
+                    <div class="kds-header">
+                        <h3><i class="fas fa-bell"></i> Готові</h3>
+                        <span class="badge" id="count-ready">0</span>
+                    </div>
+                    <div id="list-ready" class="order-list"></div>
+                </div>
+            </div>
+        </div>
+        <div id="view-bookings" style="display: none;">
+            <div class="chef-controls">
+                <h2 class="page-title-cart">Майбутні бронювання</h2>
+                <button class="btn" onclick="fetchBookings()"><i class="fas fa-sync"></i> Оновити</button>
+            </div>
+            <div class="table-container">
+                <table class="bookings-table">
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Час</th>
+                            <th>Ім'я гостя</th>
+                            <th>Гості</th>
+                            <th>Телефон</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="./js/auth.js"></script>
+    <script src="./js/chef.js"></script>
+</body>
+
+</html>

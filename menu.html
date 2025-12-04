@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory & Sage | Меню</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" type="image/png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="./index.html" class="logo">
+                <i class="fas fa-leaf"></i> Savory & Sage
+            </a>
+            <button class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="./index.html" class="nav-link">Головна</a></li>
+                    <li><a href="./menu.html" class="nav-link active">Меню</a></li>
+                    <li><a href="./reservation.html" class="nav-link">Бронювання</a></li>
+                </ul>
+            </nav>
+            <a href="./cart.html" class="nav-cart-btn-custom" id="nav-cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count-badge">0</span>
+            </a>
+
+            <a href="login.html" class="btn-login" id="nav-login-btn">Увійти</a>
+        </div>
+    </header>
+    <main id="menu">
+        <div class="page-header">
+            <div class="container">
+                <h2>Наше Меню</h2>
+                <p>Сезонні осінні пропозиції</p>
+            </div>
+        </div>
+        <div class="container main-padded" id="dynamic-menu-container">
+            <div id="loading-message" class="loading-text">
+                Завантаження меню...
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <a href="./index.html" class="logo">Savory & Sage</a>
+            <span class="footer-year">&copy; 2025</span>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/cart.js"></script>
+    <script src="./main.js"></script>
+    <script src="./js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory & Sage | Бронювання</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" type="image/png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="./index.html" class="logo">
+                <i class="fas fa-leaf"></i> Savory & Sage
+            </a>
+            <button class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="./index.html" class="nav-link">Головна</a></li>
+                    <li><a href="./menu.html" class="nav-link">Меню</a></li>
+                    <li><a href="./reservation.html" class="nav-link active">Бронювання</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="./cart.html" class="nav-cart-link" id="nav-cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </a>
+            <a href="login.html" class="btn-login" id="nav-login-btn">Увійти</a>
+        </div>
+    </header>
+    <main id="contact">
+        <div class="page-header">
+            <div class="container">
+                <h2>Бронювання</h2>
+                <p>Ми з нетерпінням чекаємо на зустріч з вами</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 20px; color: var(--color-green); font-family: var(--font-serif);">
+                        Забронювати столик</h3>
+                    <form id="reservation-form">
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Дата</label>
+                                <input type="date" id="res-date" class="form-control" required>
+                            </div>
+
+                            <div class="form-group" style="flex: 1;">
+                                <label>Час</label>
+                                <select id="res-time" class="form-control" required>
+                                    <option value="" disabled selected>Оберіть час</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Гості</label>
+                                <select id="res-guests" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2" selected>2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Ім'я</label>
+                            <input type="text" id="res-name" class="form-control" placeholder="Іван Петренко" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ел. пошта</label>
+                            <input type="email" id="res-email" class="form-control" placeholder="ivan@example.com"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label>Телефон (необов'язково)</label>
+                            <input type="tel" id="res-phone" class="form-control" placeholder="+38 (0XX) XXX-XX-XX">
+                        </div>
+
+                        <button type="submit" class="btn" style="width: 100%;">Підтвердити бронювання</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-block">
+                        <h3>Завітайте до нас</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>вулиця Центральна,<br>Просяна, Дніпропетровська обл., 53610</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <h3>Графік роботи</h3>
+                        <ul style="color: #666;">
+                            <li
+                                style="display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding: 8px 0;">
+                                <span>Пн - Пт</span>
+                                <span>10:00 - 20:00</span>
+                            </li>
+                            <li
+                                style="display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding: 8px 0;">
+                                <span>Сб - Нд</span>
+                                <span>10:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container footer-content">
+            <a href="./index.html" style="font-size: 1.2rem;" class="logo">Savory & Sage</a>
+            <span style="margin-left: 10px; font-size: 0.9rem;">&copy; 2025</span>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="./main.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/reservation.js"></script>
+</body>
+
+</html>

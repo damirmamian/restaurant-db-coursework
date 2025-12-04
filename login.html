@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory & Sage | Вхід</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" type="image/png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="login-page-container">
+        <a href="./index.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i>Назад</a>
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchTab('login')">Увійти</button>
+                <button class="auth-tab" onclick="switchTab('register')">Реєстрація</button>
+            </div>
+            <form id="login-form" class="auth-form active">
+                <h3>З поверненням</h3>
+                <div class="form-group">
+                    <label>Ел. пошта</label>
+                    <input type="email" id="login-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Пароль</label>
+                    <input type="password" id="login-password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-full">Увійти</button>
+                <div id="login-error" class="error-message"></div>
+            </form>
+            <form id="register-form" class="auth-form">
+                <h3>Створити акаунт</h3>
+                <div class="form-group">
+                    <label>Ім'я користувача</label>
+                    <input type="text" id="reg-username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Ел. пошта</label>
+                    <input type="email" id="reg-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Пароль</label>
+                    <input type="password" id="reg-password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-full">Зареєструватися</button>
+                <div id="register-error" class="error-message"></div>
+            </form>
+        </div>
+    </main>
+    <script src="./js/auth.js"></script>
+</body>
+
+</html>
