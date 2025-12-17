@@ -13,6 +13,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
+
 let allMenuItems = [];
 
 function checkAdminAccess() {
@@ -111,6 +112,7 @@ function applyFilters() {
     const minPrice = parseInt(document.getElementById('slider-min').value);
     const maxPrice = parseInt(document.getElementById('slider-max').value);
     const sortOrder = document.getElementById('sort-order').value;
+
     let filtered = allMenuItems.filter(item => {
         const price = parseFloat(item.price);
         const catMatch = category === 'all' || item.category_name === category;
@@ -121,8 +123,9 @@ function applyFilters() {
     filtered.sort((a, b) => {
         if (sortOrder === 'price_asc') return parseFloat(a.price) - parseFloat(b.price);
         if (sortOrder === 'price_desc') return parseFloat(b.price) - parseFloat(a.price);
-        return a.name.localeCompare(b.name);
+        return b.name.localeCompare(a.name, 'uk');
     });
+
     renderMenuTable(filtered);
 }
 

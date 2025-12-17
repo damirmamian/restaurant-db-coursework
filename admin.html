@@ -70,6 +70,7 @@
                         <label for="sort-order">Сортувати за:</label>
                         <select id="sort-order" class="sort-dropdown" onchange="applyFilters()">
                             <option value="name_asc">Назва (А-Я)</option>
+                            <option value="name_des">Назва (Я-А)</option>
                             <option value="price_asc">Ціна (Низька-Висока)</option>
                             <option value="price_desc">Ціна (Висока-Низька)</option>
                         </select>
@@ -84,7 +85,7 @@
                                     <th>Назва</th>
                                     <th>Категорія</th>
                                     <th>Ціна</th>
-                                    <th>Наявність</th>
+                                    <th id="price_column">Наявність</th>
                                     <th>Дії</th>
                                 </tr>
                             </thead>

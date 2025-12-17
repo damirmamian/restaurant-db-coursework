@@ -84,6 +84,7 @@ def delete_expired_reservations():
     except Exception as e:
         print(f"Cleanup Error: {e}")
 
+
 @app.route('/api/menu', methods=['GET'])
 def get_menu():
     try:
@@ -96,9 +97,11 @@ def get_menu():
             FROM menu_items m
             JOIN categories c ON m.category_id = c.category_id
         """        
-        if view_mode != 'admin':
-            base_query += " WHERE m.is_available = 1"
-        base_query += " ORDER BY c.display_order ASC, m.name ASC"
+        if view_mode == 'admin':
+            base_query += " ORDER BY m.name DESC"
+        else:
+            base_query += " WHERE m.is_available = 1 ORDER BY c.display_order ASC, m.name ASC"
+            
         cursor.execute(base_query)
         menu_items = cursor.fetchall()        
         for item in menu_items:
@@ -463,3 +466,19 @@ def get_chef_bookings():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
+
+
+#        BUTTON TO MAKE ALL ITEMS AVAILABLE
+# @app.route('/api/menu/checkall', methods=['POST'])
+# def availableAll():
+#     try:
+#         conn = get_db_connection()
+#         cursor = conn.cursor()
+#         cursor.execute("UPDATE menu_items SET is_available = 1")
+#         conn.commit()  # 2. commit робиться у CONNECTION, а не у cursor
+#         cursor.close()
+#         conn.close()
+#         return jsonify({'message': 'All items are now available'}), 200
+#     except Exception as e:
+#         return jsonify({'error': str(e)}), 500

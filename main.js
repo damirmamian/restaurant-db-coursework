@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadMenu(menuContainer);
     }
 });
+
 async function loadMenu(container) {
     try {
         const response = await fetch(MENU_API_URL);
@@ -26,6 +27,7 @@ async function loadMenu(container) {
             }
             groupedMenu[category].push(item);
         });
+
         const uniqueCategories = Object.keys(groupedMenu);
         uniqueCategories.forEach(categoryName => {
             const items = groupedMenu[categoryName];
